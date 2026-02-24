@@ -37,6 +37,7 @@ X_test[['Time', 'Amount']] = scaler.transform(X_test[['Time', 'Amount']])
 log_model = LogisticRegression(max_iter=1000, class_weight='balanced')
 log_model.fit(X_train, y_train)
 
+# Predictions and probabilities
 y_pred = log_model.predict(X_test)
 y_proba = log_model.predict_proba(X_test)[:, 1]
 
